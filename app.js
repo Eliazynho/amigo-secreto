@@ -5,7 +5,7 @@ const resultadoHTML = document.getElementById("resultado");
 let listaDeAmigos = [];
 
 function adicionarAmigo() {
-  const nome = inputName.value.trim();
+  let nome = inputName.value.trim();
   nome = nome.charAt(0).toUpperCase() + nome.slice(1);
 
   if (nome === "") return;
