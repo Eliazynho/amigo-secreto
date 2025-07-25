@@ -64,11 +64,6 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar sugestões, mel
 - [ ] Exportar resultado como imagem ou PDF
 - [ ] Estilo natalino ou temático
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
----
 
 Desenvolvido com 💜 por Elias Santos
 🔗 [LinkedIn](https://www.linkedin.com/in/elias-santos-67b5601b7) | 🐙 [GitHub](https://github.com/Eliazynho)
