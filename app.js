@@ -36,15 +36,6 @@ function atualizarLista() {
   });
 }
 
-function embaralhar(array) {
-  let atual = array.length;
-  while (atual) {
-    const randomIndex = Math.floor(Math.random() * atual--);
-    [array[atual], array[randomIndex]] = [array[randomIndex], array[atual]];
-  }
-  return array;
-}
-
 function sortearAmigo() {
   if (listaDeAmigos.length < 1) {
     alert("Adicione pelo menos um nome à lista.");
