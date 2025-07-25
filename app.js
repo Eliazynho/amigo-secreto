@@ -1,1 +1,59 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
+const inputName = document.getElementById("amigo");
+const listaHTML = document.getElementById("listaAmigos");
+const resultadoHTML = document.getElementById("resultado");
+
+let listaDeAmigos = [];
+
+function adicionarAmigo() {
+  const nome = inputName.value.trim();
+
+  if (nome === "") return;
+
+  if (listaDeAmigos.includes(nome)) {
+    alert("Este nome já foi adicionado!");
+    inputName.value = "";
+    return;
+  }
+
+  listaDeAmigos.push(nome);
+  listaDeAmigos.sort((a, b) =>
+    a.localeCompare(b, "pt", { sensitivity: "base" })
+  );
+
+  atualizarLista();
+  inputName.value = "";
+  inputName.focus();
+}
+
+function atualizarLista() {
+  listaHTML.innerHTML = "";
+
+  listaDeAmigos.forEach((nome) => {
+    const item = document.createElement("li");
+    item.textContent = nome;
+    listaHTML.appendChild(item);
+  });
+}
+
+function embaralhar(array) {
+  let atual = array.length;
+  while (atual) {
+    const randomIndex = Math.floor(Math.random() * atual--);
+    [array[atual], array[randomIndex]] = [array[randomIndex], array[atual]];
+  }
+  return array;
+}
+
+function sortearAmigo() {
+  if (listaDeAmigos.length < 1) {
+    alert("Adicione pelo menos um nome à lista.");
+    return;
+  }
+
+  const sorteado =
+    listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
+
+  resultadoHTML.innerHTML = `
+    <li>Seu amigo secreto é: <strong>${sorteado}</strong> 🎁</li>
+  `;
+}
